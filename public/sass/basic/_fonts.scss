@@ -1,0 +1,58 @@
+
+@font-face {
+    font-family: 'EuclidSquare-B';
+    src: url('../css/font/EuclidSquare/EuclidSquare-Bold.eot');
+    src: local('Euclid Square Bold'), local('EuclidSquare-Bold'),
+    url('../css/font/EuclidSquare/EuclidSquare-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../css/font/EuclidSquare/EuclidSquare-Bold.woff2') format('woff2'),
+    url('../css/font/EuclidSquare/EuclidSquare-Bold.woff') format('woff'),
+    url('../css/font/EuclidSquare/EuclidSquare-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EuclidSquare-R';
+    src: url('../css/font/EuclidSquare/EuclidSquare-Regular.eot');
+    src: local('Euclid Square Regular'), local('EuclidSquare-Regular'),
+    url('../css/font/EuclidSquare/EuclidSquare-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../css/font/EuclidSquare/EuclidSquare-Regular.woff2') format('woff2'),
+    url('../css/font/EuclidSquare/EuclidSquare-Regular.woff') format('woff'),
+    url('../css/font/EuclidSquare/EuclidSquare-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'EuclidSquare-M';
+    src: url('../css/font/EuclidSquare/EuclidSquare-Medium.eot');
+    src: local('Euclid Square Medium'), local('EuclidSquare-Medium'),
+    url('../css/font/EuclidSquare/EuclidSquare-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../css/font/EuclidSquare/EuclidSquare-Medium.woff2') format('woff2'),
+    url('../css/font/EuclidSquare/EuclidSquare-Medium.woff') format('woff'),
+    url('../css/font/EuclidSquare/EuclidSquare-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'EuclidSquare-L';
+    src: url('../css/font/EuclidSquare/EuclidSquare-Light.eot');
+    src: local('Euclid Square Light'), local('EuclidSquare-Light'),
+    url('../css/font/EuclidSquare/EuclidSquare-Light.eot?#iefix') format('embedded-opentype'),
+    url('../css/font/EuclidSquare/EuclidSquare-Light.woff2') format('woff2'),
+    url('../css/font/EuclidSquare/EuclidSquare-Light.woff') format('woff'),
+    url('../css/font/EuclidSquare/EuclidSquare-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EuclidSquare-SM';
+    src: url('../css/font/EuclidSquare/EuclidSquare-SemiBold.eot');
+    src: local('Euclid Square SemiBold'), local('EuclidSquare-SemiBold'),
+    url('../css/font/EuclidSquare/EuclidSquare-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('../css/font/EuclidSquare/EuclidSquare-SemiBold.woff2') format('woff2'),
+    url('../css/font/EuclidSquare/EuclidSquare-SemiBold.woff') format('woff'),
+    url('../css/font/EuclidSquare/EuclidSquare-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}

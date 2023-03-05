@@ -1,0 +1,58 @@
+*, ::after, ::before {
+  box-sizing: border-box!important;
+}
+.general {
+    &__container {
+        padding: 0 15.75rem;
+    }
+    &__top {
+        @include flexBetween();
+        h2 {
+            color: var(--main-color-black);
+            font-size: 2.4rem;
+        }
+        a {
+            font-size: .8rem;
+            border-radius: 1.4rem;
+            padding: .8rem 1.6rem;
+            background-color: rgba(7, 7, 7, 0.05);
+            transition: .3s all;
+            color: var(--main-color-black);
+            &:hover {
+                background-color: var(--main-color-black);
+                color: var(--main-color-white);
+            }
+        }
+    }
+    &__title {
+    }
+    &__subtitle {
+    }
+    &-R {
+        font-family: "EuclidSquare-R";
+    }
+    &-M {
+        font-family: "EuclidSquare-M";
+    }
+    &-B {
+        font-family: "EuclidSquare-B";
+    }
+    &-L {
+        font-family: "EuclidSquare-L";
+    }
+    &-SM {
+        font-family: "EuclidSquare-SM";
+    }
+}
+@media (max-width: 900.98px) {
+    .general {
+        &__container {
+            padding: 0 1.5rem;
+        }
+        &__top {
+
+        }
+        &__title {
+        }
+    }
+}
