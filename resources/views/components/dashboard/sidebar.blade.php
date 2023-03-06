@@ -57,6 +57,18 @@
                         <span>Обратная связь</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('korzina.index')}}">
+                        <i class="uil-star"></i>
+                        <span>Заказать</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('words.index') }}">
+                        <i class="uil-star"></i>
+                        <span>Словарь</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->

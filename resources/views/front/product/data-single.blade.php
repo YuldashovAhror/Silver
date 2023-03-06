@@ -14,7 +14,7 @@
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2 2H3.74C4.82 2 5.67 2.93 5.58 4L4.75 13.96C4.71759 14.3459 4.76569 14.7342 4.89123 15.1005C5.01678 15.4669 5.21705 15.8031 5.47934 16.0879C5.74163 16.3728 6.06023 16.6001 6.41495 16.7553C6.76967 16.9106 7.15278 16.9905 7.54 16.99H18.19C19.63 16.99 20.89 15.81 21 14.38L21.54 6.88C21.66 5.22 20.4 3.87 18.73 3.87H5.82M9 8H21M16.25 22C16.5815 22 16.8995 21.8683 17.1339 21.6339C17.3683 21.3995 17.5 21.0815 17.5 20.75C17.5 20.4185 17.3683 20.1005 17.1339 19.8661C16.8995 19.6317 16.5815 19.5 16.25 19.5C15.9185 19.5 15.6005 19.6317 15.3661 19.8661C15.1317 20.1005 15 20.4185 15 20.75C15 21.0815 15.1317 21.3995 15.3661 21.6339C15.6005 21.8683 15.9185 22 16.25 22ZM8.25 22C8.58152 22 8.89946 21.8683 9.13388 21.6339C9.3683 21.3995 9.5 21.0815 9.5 20.75C9.5 20.4185 9.3683 20.1005 9.13388 19.8661C8.89946 19.6317 8.58152 19.5 8.25 19.5C7.91848 19.5 7.60054 19.6317 7.36612 19.8661C7.1317 20.1005 7 20.4185 7 20.75C7 21.0815 7.1317 21.3995 7.36612 21.6339C7.60054 21.8683 7.91848 22 8.25 22Z" stroke="black" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <p class="general-M"><span class="static__count">37</span> человек купили на этой неделе</p>
+                        <p class="general-M"><span class="static__count">37</span> {{__('asd.человек купили на этой неделе')}}</p>
                     </div>
                     <!-- /.static__box -->
                     <div class="static__box">
@@ -22,7 +22,7 @@
                             <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" fill="#F5A623"/>
                         </svg>
                         <p class="general-M">
-                            Рейтинг товара (<span class="rating__count">5.0</span>)
+                            {{__('asd.Рейтинг товара')}} (<span class="rating__count">5.0</span>)
                         </p>
                     </div>
                     <!-- /.static__rating -->
@@ -63,7 +63,7 @@
                     <!-- /.single__banner -->
                     <div class="single__main">
                         {{-- <h1 class="title general-SM">Защитный тент чехол для автомобилей Chevrolet Lacetti, Gentra, Cobalt, Nexia, Matiz, Spark</h1> --}}
-                        <h1 class="title general-SM">{{$product->name_ru}}</h1>
+                        <h1 class="title general-SM">{{$product['name_'.$lang]}}</h1>
                         <!-- /.title -->
                         <form action="{{route('orders.store')}}" method="POST" class="single__form">
                             @csrf
@@ -71,7 +71,7 @@
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.4425 16.5C15.4425 13.5975 12.555 11.25 9 11.25C5.445 11.25 2.5575 13.5975 2.5575 16.5M9 9C9.99456 9 10.9484 8.60491 11.6516 7.90165C12.3549 7.19839 12.75 6.24456 12.75 5.25C12.75 4.25544 12.3549 3.30161 11.6516 2.59835C10.9484 1.89509 9.99456 1.5 9 1.5C8.00543 1.5 7.05161 1.89509 6.34834 2.59835C5.64508 3.30161 5.25 4.25544 5.25 5.25C5.25 6.24456 5.64508 7.19839 6.34834 7.90165C7.05161 8.60491 8.00543 9 9 9Z" stroke="#E50000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                <input type="text" name="name" id="form__name" class="general-R" placeholder="Ваше имя">
+                                <input type="text" name="name" id="form__name" required class="general-R" placeholder="Ваше имя">
                             </label>
                             <!-- /.single__box -->
                             <label for="form__phone" class="single__box">
@@ -85,17 +85,17 @@
                                         </clipPath>
                                     </defs>
                                 </svg>
-                                <input type="tel" id="form__phone" name="phone" class="general-R form__tel" placeholder="Номер телефона">
+                                <input type="tel" id="form__phone" name="phone" required class="general-R form__tel" placeholder="Номер телефона">
                             </label>
                             <!-- /.single__box -->
                             <fieldset>
                                 <svg class="select-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6.42 2.99998V12.75M11.7975 4.96498V15M1.7175 5.83498V13.1325C1.7175 14.5575 2.73 15.1425 3.96 14.4375L5.7225 13.4325C6.105 13.215 6.7425 13.1925 7.14 13.395L11.0775 15.3675C11.475 15.5625 12.1125 15.5475 12.495 15.33L15.7425 13.47C16.155 13.23 16.5 12.645 16.5 12.165V4.86748C16.5 3.44248 15.4875 2.85748 14.2575 3.56248L12.495 4.56748C12.1125 4.78498 11.475 4.80748 11.0775 4.60498L7.14 2.63998C6.7425 2.44498 6.105 2.45998 5.7225 2.67748L2.475 4.53748C2.055 4.77748 1.7175 5.36248 1.7175 5.83498Z" stroke="#E50000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                {{-- <input type="hidden" name="product_id" id="product_id"> --}}
+                                <input type="hidden" name="product_id" value="{{$product->id}}">
                                 <select name="location" id="sources"class="custom-select sources" data-placeholder="Выберите область">
                                     @foreach ($locations as $location)  
-                                    <option value="{{ $location->id }}">{{$location->name_uz}}</option>
+                                    <option value="{{ $location->id }}">{{$location['name_'.$lang]}}</option>
                                     @endforeach
                                 </select>
                             </fieldset>
@@ -119,16 +119,16 @@
                             </fieldset>
                             <div class="single__container">
                                 <div class="box">
-                                    <p class="subtitle general-R">Цена по акции:</p>
+                                    <p class="subtitle general-R">{{__('asd.Цена по акции:')}}</p>
                                     <!-- /.subtitle -->
                                     <h4 class="price general-SM">
                                         {{$product->price}}
-                                        <span>Сум</span>
+                                        <span>{{__('asd.Сум')}}</span>
                                     </h4>
                                     <!-- /.price -->
                                 </div>
                                 <!-- /.box -->
-                                <button type="submit" ch class="general-SM">Заказать</button>
+                                <button type="submit" ch class="general-SM">{{__('asd.Заказать')}}</button>
                             </div>
                             <!-- /.single__container -->
                         </form>
@@ -153,8 +153,7 @@
                             </svg>
                         </div>
                         <!-- /.features__pic -->
-                        <p class="features__description general-M">Оплата после доставки
-                            и проверки Вами</p>
+                        <p class="features__description general-M">{{__('asd.Оплата после доставки и проверки Вами')}}</p>
                         <!-- /.features__description -->
                     </div>
                     <!-- /.features__item -->
@@ -167,8 +166,7 @@
                             </svg>
                         </div>
                         <!-- /.features__pic -->
-                        <p class="features__description general-M">Быстрая доставка курьером
-                            на дом по Ташкенту</p>
+                        <p class="features__description general-M">{{__('asd.Быстрая доставка курьером на дом по Ташкенту')}}</p>
                         <!-- /.features__description -->
                     </div>
                     <!-- /.features__item -->
@@ -181,8 +179,7 @@
                             </svg>
                         </div>
                         <!-- /.features__pic -->
-                        <p class="features__description general-M">В случае заводского
-                            брака обменяем товар</p>
+                        <p class="features__description general-M">{{__('asd.В случае заводского брака обменяем товар')}}</p>
                         <!-- /.features__description -->
                     </div>
                     <!-- /.features__item -->
@@ -194,7 +191,7 @@
                             </svg>
                         </div>
                         <!-- /.features__pic -->
-                        <p class="features__description general-M">Скидки и акции постоянным клиентам</p>
+                        <p class="features__description general-M">{{__('asd.Скидки и акции постоянным клиентам')}}</p>
                         <!-- /.features__description -->
                     </div>
                     <!-- /.features__item -->

@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Front;
+namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Models\Order;
 use Illuminate\Http\Request;
 
-class OrdersController extends Controller
+class WordController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        
+        return view('dashboard.word');
     }
 
     /**
@@ -36,16 +35,7 @@ class OrdersController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-        // Order::create($request->all());
-        $order = new Order();
-        $order->name = $request->name;
-        $order->phone = $request->phone;
-        $order->location_id = $request->location;
-        $order->brend_id = $request->brend;
-        $order->product_id = $request->product_id;
-        $order->save();
-        return redirect()->route('success.index');
+        //
     }
 
     /**

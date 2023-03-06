@@ -20,8 +20,8 @@
     </span>
     {{--=========POPUP FEEDBACK=========--}}
     <div class="popup__container" style="display: block">
-        <h2 class="title general-SM">Мы вам позвоним</h2>
-        <p class="subtitle general-R">Оставьте свой номер, и мы перезвоним вам.</p>
+        <h2 class="title general-SM">{{__('asd.Мы вам позвоним')}}</h2>
+        <p class="subtitle general-R">{{__('asd.Оставьте свой номер, и мы перезвоним вам.')}}</p>
         <form action="" class="popup__form">
             <label for="popup__name" class="form__box">
                 <input type="text" name="first_name" id="first_name" class="general-R" placeholder="Ваше имя">
@@ -30,10 +30,10 @@
                 <input type="tel" id="phone" name="phone" class="general-R form__tel" placeholder="+998">
                 <input id="token" value="{{ csrf_token() }}" type="hidden">
             </label>
-            <button type="button" onclick="send()" id="button" class="form__btn general-SM">Отправить заявку</button>
+            <button type="button" onclick="send()" id="button" class="form__btn general-SM">{{__('asd.Отправить заявку')}}</button>
         </form>
-        <p class="text general-R">Обращаем ваше внимание, что режим работы отдела продаж
-            с 9:00 до 21:00</p>
+        <p class="text general-R">{{__('asd.Обращаем ваше внимание, что режим работы отдела продаж')}}
+            {{__('asd.с 9:00 до 21:00')}}</p>
     </div>
     {{--=========POPUP SUCCESS=========--}}
     <div class="popup__success" style="display: none">
@@ -48,10 +48,10 @@
                 </clipPath>
             </defs>
         </svg>
-        <h3 class="title general-R">Ваша заявка успешно отправлена</h3>
-        <p class="subtitle general-L">Наши менеджеры обязательно свяжутся с Вами
-            и ответят на все Ваши вопросы.</p>
-        <button class="popup__close general-SM" type="button">Закрыть</button>
+        <h3 class="title general-R">{{__('asd.Ваша заявка успешно отправлена')}}</h3>
+        <p class="subtitle general-L">{{__('asd.Наши менеджеры обязательно свяжутся с Вами
+            и ответят на все Ваши вопросы.')}}</p>
+        <button class="popup__close general-SM" type="button">{{__('asd.Закрыть')}}</button>
     </div>
 </div>
 

@@ -17,9 +17,26 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(12);
         return view('welcome', [
             'products'=>$products
+        ]);
+    }
+
+    public function load_more()
+    {
+        $products = Product::paginate(12);
+        $page = 1;
+
+        return view('load', [
+            'products'=>$products,
+        ]);
+    }
+
+    public function button(Request $request)
+    {
+        return view('button', [
+            'page'=>$request->page
         ]);
     }
 

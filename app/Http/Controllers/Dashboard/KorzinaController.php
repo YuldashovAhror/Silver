@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
-class OrderController extends Controller
+class KorzinaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::with(['location', 'brend', 'product'])->get();
+        return view('dashboard.orders.index', ['orders'=>$orders]);
     }
 
     /**
@@ -80,6 +82,7 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Order::find($id)->delete();
+        return back();
     }
 }

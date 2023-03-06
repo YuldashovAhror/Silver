@@ -15,9 +15,11 @@
                             <div class="mb-3">
                                 <label class="form-label" for="exampleFormControlInput1">Фотографии продукта</label>
                                 <div class="col-12 text-center">
-                                    <i data-feather="loader" style="height: 100px; width: 100px"></i>
+                                    @foreach ($product->photos as $photo)
+                                        <img src="{{ $photo }}" style="height: 100px; width: 100px">
+                                    @endforeach
                                 </div>
-                                <input class="form-control" id="exampleFormControlInput1"  type="file" name="photos[]" multiple>
+                                <input class="form-control mt-4" type="file" name="photos[]" multiple>
                             </div>
                         </div>
                     </div>

@@ -50,7 +50,7 @@
         </div>
         <!-- /.footer__mob -->
         <div class="footer__container">
-            <p class="footer__txt general-R">© 2018-2023 Silver Magic</p>
+            <p class="footer__txt general-R">{{__('asd.© 2018-2023 Silver Magic')}}</p>
             <!-- /.footer__txt -->
             <div class="messenger">
                 <a href="" class="messenger__item">
