@@ -27,6 +27,7 @@
                     </div>
                     <!-- /.static__rating -->
                 </div>
+                {{-- @dd($product->all()) --}}
                 <!-- /.static -->
                 <div class="single">
                     <div class="single__banner">
@@ -38,14 +39,14 @@
                             </button>
                             <div class="banner__slider">
                                 <div class="swiper-wrapper">
-                                    <?php for ($i = 1; $i <= 4; $i++):?>
-                                    <div class="swiper-slide">
-                                        <div class="banner__item">
-                                            <img src="<?php echo '/img/products/'.$i.'.jpg'; ?>" alt="">
+                                    @foreach ($product->photos as $photo)
+                                        <div class="swiper-slide">
+                                            <div class="banner__item">
+                                                <img src="{{$photo}}" alt="">
+                                            </div>
+                                            <!-- /.banner__item -->
                                         </div>
-                                        <!-- /.banner__item -->
-                                    </div>
-                                    <?php endfor ?>
+                                    @endforeach
                                 </div>
                             </div>
                             <!-- /.banner__slider -->
@@ -61,14 +62,16 @@
                     </div>
                     <!-- /.single__banner -->
                     <div class="single__main">
-                        <h1 class="title general-SM">Защитный тент чехол для автомобилей Chevrolet Lacetti, Gentra, Cobalt, Nexia, Matiz, Spark</h1>
+                        {{-- <h1 class="title general-SM">Защитный тент чехол для автомобилей Chevrolet Lacetti, Gentra, Cobalt, Nexia, Matiz, Spark</h1> --}}
+                        <h1 class="title general-SM">{{$product->name_ru}}</h1>
                         <!-- /.title -->
-                        <form action="" class="single__form">
+                        <form action="{{route('orders.store')}}" method="POST" class="single__form">
+                            @csrf
                             <label for="form__name" class="single__box">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.4425 16.5C15.4425 13.5975 12.555 11.25 9 11.25C5.445 11.25 2.5575 13.5975 2.5575 16.5M9 9C9.99456 9 10.9484 8.60491 11.6516 7.90165C12.3549 7.19839 12.75 6.24456 12.75 5.25C12.75 4.25544 12.3549 3.30161 11.6516 2.59835C10.9484 1.89509 9.99456 1.5 9 1.5C8.00543 1.5 7.05161 1.89509 6.34834 2.59835C5.64508 3.30161 5.25 4.25544 5.25 5.25C5.25 6.24456 5.64508 7.19839 6.34834 7.90165C7.05161 8.60491 8.00543 9 9 9Z" stroke="#E50000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                <input type="text" id="form__name" class="general-R" placeholder="Ваше имя">
+                                <input type="text" name="name" id="form__name" class="general-R" placeholder="Ваше имя">
                             </label>
                             <!-- /.single__box -->
                             <label for="form__phone" class="single__box">
@@ -82,31 +85,18 @@
                                         </clipPath>
                                     </defs>
                                 </svg>
-                                <input type="tel" id="form__phone" class="general-R form__tel" placeholder="Номер телефона">
+                                <input type="tel" id="form__phone" name="phone" class="general-R form__tel" placeholder="Номер телефона">
                             </label>
                             <!-- /.single__box -->
                             <fieldset>
                                 <svg class="select-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6.42 2.99998V12.75M11.7975 4.96498V15M1.7175 5.83498V13.1325C1.7175 14.5575 2.73 15.1425 3.96 14.4375L5.7225 13.4325C6.105 13.215 6.7425 13.1925 7.14 13.395L11.0775 15.3675C11.475 15.5625 12.1125 15.5475 12.495 15.33L15.7425 13.47C16.155 13.23 16.5 12.645 16.5 12.165V4.86748C16.5 3.44248 15.4875 2.85748 14.2575 3.56248L12.495 4.56748C12.1125 4.78498 11.475 4.80748 11.0775 4.60498L7.14 2.63998C6.7425 2.44498 6.105 2.45998 5.7225 2.67748L2.475 4.53748C2.055 4.77748 1.7175 5.36248 1.7175 5.83498Z" stroke="#E50000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                <select name="sources"
-                                        id="sources"
-                                        class="custom-select sources"
-                                        data-placeholder="Выберите область">
-                                    <option value="г.Ташкент">г.Ташкент</option>
-                                    <option value="Ташкентская область">Ташкентская область</option>
-                                    <option value="Андижанской области">Андижанской области</option>
-                                    <option value="Бухарская область">Бухарская область</option>
-                                    <option value="Ферганской области">Ферганской области</option>
-                                    <option value="Джизакская область">Джизакская область</option>
-                                    <option value="Наманганская область">Наманганская область</option>
-                                    <option value="Навоийская область">Навоийская область</option>
-                                    <option value="Кашкадарьинская область">Кашкадарьинская область</option>
-                                    <option value="Самаркандская область">Самаркандская область</option>
-                                    <option value="Сырдарьинская область">Сырдарьинская область</option>
-                                    <option value="Сурхандарьинская область">Сурхандарьинская область</option>
-                                    <option value="Хорезмская область">Хорезмская область</option>
-                                    <option value="Каракалпакстан">Каракалпакстан</option>
+                                {{-- <input type="hidden" name="product_id" id="product_id"> --}}
+                                <select name="location" id="sources"class="custom-select sources" data-placeholder="Выберите область">
+                                    @foreach ($locations as $location)  
+                                    <option value="{{ $location->id }}">{{$location->name_uz}}</option>
+                                    @endforeach
                                 </select>
                             </fieldset>
                             <fieldset>
@@ -121,27 +111,24 @@
                                     <path d="M3.74782 7.49938L2.24719 7.12422" stroke="#E50000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M3.7478 7.87452V7.49486L4.37506 5.14113C4.5934 4.31954 5.33771 3.7478 6.18707 3.7478H11.8774C12.7456 3.7478 13.5004 4.34355 13.7022 5.1884L14.2522 7.49486V7.87452" stroke="#E50000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                <select name="sources"
-                                        id="sources"
-                                        class="custom-select sources"
-                                        data-placeholder="Марка машины">
-                                    <option value="kia">kia</option>
-                                    <option value="chevrolet">chevrolet</option>
+                                <select name="brend" id="sources" class="custom-select sources" data-placeholder="Марка машины">
+                                    @foreach ($brends as $brend)  
+                                    <option value="{{ $brend->id }}">{{$brend->name}}</option>
+                                    @endforeach
                                 </select>
-
                             </fieldset>
                             <div class="single__container">
                                 <div class="box">
                                     <p class="subtitle general-R">Цена по акции:</p>
                                     <!-- /.subtitle -->
                                     <h4 class="price general-SM">
-                                        136.000
+                                        {{$product->price}}
                                         <span>Сум</span>
                                     </h4>
                                     <!-- /.price -->
                                 </div>
                                 <!-- /.box -->
-                                <button type="submit" class="general-SM">Заказать</button>
+                                <button type="submit" ch class="general-SM">Заказать</button>
                             </div>
                             <!-- /.single__container -->
                         </form>
@@ -224,6 +211,12 @@
 @endsection
 
 @section('script')
+    <script>
+        function choose(id)
+        {
+            $('#product_id').val(id);
+        }
+    </script>
     <script src="/js/swiper.min.js"></script>
     <script src="/js/fancybox.umd.js"></script>
     <script>

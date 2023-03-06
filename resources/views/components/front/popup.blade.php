@@ -24,12 +24,13 @@
         <p class="subtitle general-R">Оставьте свой номер, и мы перезвоним вам.</p>
         <form action="" class="popup__form">
             <label for="popup__name" class="form__box">
-                <input type="text" id="popup__name" class="general-R" placeholder="Ваше имя">
+                <input type="text" name="first_name" id="first_name" class="general-R" placeholder="Ваше имя">
             </label>
             <label for="popup__tel" class="form__box">
-                <input type="tel" id="popup__tel" class="general-R form__tel" placeholder="+998">
+                <input type="tel" id="phone" name="phone" class="general-R form__tel" placeholder="+998">
+                <input id="token" value="{{ csrf_token() }}" type="hidden">
             </label>
-            <button type="submit" class="form__btn general-SM">Отправить заявку</button>
+            <button type="button" onclick="send()" id="button" class="form__btn general-SM">Отправить заявку</button>
         </form>
         <p class="text general-R">Обращаем ваше внимание, что режим работы отдела продаж
             с 9:00 до 21:00</p>
@@ -53,3 +54,34 @@
         <button class="popup__close general-SM" type="button">Закрыть</button>
     </div>
 </div>
+
+<script>
+    function send() {
+
+        let token = $("#token").val();
+        let first_name = $('#first_name').val();
+        let phone = $('#phone').val();
+        $.ajax({
+            token: token,
+            type: "get",
+            url: "/feedback/store",
+            data: {
+                first_name: first_name,
+                phone: phone,
+            },
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+        });
+        setTimeout(() => {
+            $('.popup__container').hide()
+            $('.popup__success').show()
+            $("#first_name").val('');
+            $("#phone").val('');
+        }, 1000)
+        setTimeout(() => {
+            $('.popup__container').show()
+            $('.popup__success').hide()
+            $('.feedback').hide()
+        }, 3000)
+    }
+</script>

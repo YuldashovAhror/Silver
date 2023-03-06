@@ -5,21 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Location extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'photos',
         'name_uz',
         'name_ru',
-        'price',
     ];
-
-    protected $casts = [
-        'photos' => 'array'
-    ];
-    public function products()
+    public function locations()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Location::class);
     }
 }

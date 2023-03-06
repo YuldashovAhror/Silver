@@ -26,24 +26,36 @@
                 <li>
                     <a href="/dashboard">
                         <i class="uil-star"></i>
-                        <span>Test</span>
+                        <span>Dashboard</span>
                     </a>
                 </li>
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="uil-star"></i>
-                        <span>Dropdown</span>
+                        <span>Продукты</span>
                     </a>
                     <ul class="sub-menu mm-collapse" aria-expanded="false">
-                        <li><a href="ecommerce-products.html">Products</a></li>
-                        <li><a href="ecommerce-product-detail.html">Product Detail</a></li>
-                        <li><a href="ecommerce-orders.html">Orders</a></li>
-                        <li><a href="ecommerce-customers.html">Customers</a></li>
-                        <li><a href="ecommerce-cart.html">Cart</a></li>
-                        <li><a href="ecommerce-checkout.html">Checkout</a></li>
-                        <li><a href="ecommerce-shops.html">Shops</a></li>
-                        <li><a href="ecommerce-add-product.html">Add Product</a></li>
+                        <li><a href="{{route('product.index')}}">Все</a></li>
+                        <li><a href="{{route('product.create')}}">Создать</a></li>
                     </ul>
+                </li>
+                <li>
+                    <a href="{{route('brend.index')}}">
+                        <i class="uil-star"></i>
+                        <span>Бренд</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('location.index')}}">
+                        <i class="uil-star"></i>
+                        <span>Выберите область</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('feedback.index')}}">
+                        <i class="uil-star"></i>
+                        <span>Обратная связь</span>
+                    </a>
                 </li>
             </ul>
         </div>

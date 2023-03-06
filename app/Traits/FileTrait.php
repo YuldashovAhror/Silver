@@ -33,8 +33,15 @@ trait FileTrait
 
     public function fileDelete($model, $id, $col_name)
     {
-        if (is_file(public_path($model::find($id)->$col_name))){
-            unlink(public_path() . $model::find($id)->$col_name);
+        if (!is_null($model)){
+            $model = 'App\Models' . $model;
+            if (is_file(public_path($model::find($id)->$col_name))){
+                unlink(public_path() . $model::find($id)->$col_name);
+            }
+        }else{
+            if (is_file(public_path($col_name))){
+                unlink(public_path() . $col_name);
+            }
         }
         return back();
     }
