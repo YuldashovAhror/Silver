@@ -31,9 +31,24 @@
                         <th scope="row">{{$num++}}</th>
                         <td >{{$order->name}}</td>
                         <td>{{$order->phone}}</td>
-                        <td>{{$order->location->name_ru}}</td>
-                        <td>{{$order->brend->name}}</td>
+                        @if ($order->location == null)
+                            <td><h6 style="color: red">Location ma'lumotlari mavjud emas !</h6></td>
+                        @endif
+                        @if ($order->location != null)
+                            <td>{{$order->location->name_ru}}</td>
+                        @endif
+                        @if ($order->brend == null)
+                            <td><h6 style="color: red">Brend ma'lumotlari mavjud emas !</h6></td>
+                        @endif
+                        @if ($order->brend != null)
+                            <td>{{$order->brend->name}}</td>
+                        @endif
+                        @if ($order->product == null)
+                            <td><h6 style="color: red">Product ma'lumotlari mavjud emas !</h6></td>
+                        @endif
+                        @if ($order->product != null)
                         <td>{{$order->product->name_ru}}</td>
+                        @endif
                         <td>
                             <button class="btn btn-xs btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalCenter{{ $order->id }}"><i class="bx bx-trash"></i></button>
                             <div class="modal fade" id="exampleModalCenter{{ $order->id }}" tabindex="-1" aria-labelledby="exampleModalCenter" style="display: none;" aria-hidden="true">

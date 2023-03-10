@@ -30,7 +30,7 @@
                                             <td>{{ $product->name_ru }}</td>
                                             <td>{{ $product->price }}</td>
                                             <td style=" display: flex; justify-content: center; ">
-                                                <a href="{{ route('product.edit', $product) }}">
+                                                <a href="{{ route('product.edit', $product->slug) }}">
                                                     <button class="btn btn-xs btn-success">
                                                         <i class="bx bx-pencil"></i>
                                                     </button>

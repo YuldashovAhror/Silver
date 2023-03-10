@@ -37,7 +37,7 @@
                                         <span class="general-M">{{__('asd.Cум')}}</span>
                                     </h4>
                                     <!-- /.price -->
-                                    <a href="{{route('product.shows', $product->id)}}" class="more general-SM">{{__('asd.Заказать')}}</a>
+                                    <a href="{{route('product.shows', $product->slug)}}" class="more general-SM">{{__('asd.Заказать')}}</a>
                                     <!-- /. -->
                                 </div>
                                 <!-- /.products__item-bottom -->

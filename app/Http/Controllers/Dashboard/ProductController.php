@@ -68,9 +68,9 @@ class ProductController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        $product = Product::find($id);
+        $product = Product::where('slug', $slug)->first();
         return view('dashboard.product.edit',compact('product'));
     }
 
@@ -81,9 +81,10 @@ class ProductController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $slug)
     {
-        return $this->productService->update($request, $id);
+
+        return $this->productService->update($request, $slug);
     }
 
     /**

@@ -6,7 +6,8 @@
             <div class="card-header pb-0">
                 <h5>Изменить продукт</h5>
             </div>
-            <form action="{{ route('product.update', $product->id) }}" method="post" enctype="multipart/form-data">
+            {{-- @dd($product->slug); --}}
+            <form action="{{ route('product.update', $product->slug) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 {{ method_field('put') }}
                 <div class="card-body">

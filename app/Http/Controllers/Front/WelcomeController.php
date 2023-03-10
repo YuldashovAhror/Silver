@@ -67,11 +67,11 @@ class WelcomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
         $brends = Brend::all();
         $locations = Location::all();
-        $product = Product::find($id);
+        $product = Product::where('slug', $slug)->first();
         return view('front.product.data-single', [
             'product'=>$product,
             'brends'=>$brends,

@@ -3,6 +3,7 @@
 namespace App\Services\Dashboard;
 
 use App\Models\Product;
+use Illuminate\Support\Str;
 
 class ProductService extends BaseService
 {
@@ -20,20 +21,26 @@ class ProductService extends BaseService
             foreach ($request['photos'] as $photo){
                 array_push($photos, $this->photoSave($photo, 'img/products'));
             }
-            
         }
-        $request['photos'] = $photos;
-        // dd($request);
-        Product::create($request);
+    
+        $product = new Product();
+        $product->photos = $photos;
+        $product->name_ru = $request['name_ru'];
+        $product->name_uz = $request['name_uz'];
+        $product->price = $request['price'];
+        // $product->slug = Str::slug($request->name_ru) . '-' . Str::random(5);
+        $product->slug = Str::slug($request['name_ru']) . '-' . Str::random(5);
+        $product->save();
         return back();
     }
 
-    public function update($request, $id)
+    public function update($request, $slug)
     {
         $request = $request->toArray();
-        dd($request['photos']);
+        // dd($request);
+        $product = Product::where('slug', $slug)->first();
         if (!empty($request['photos'])){
-            foreach (Product::find($id)->photos as $photo){
+            foreach (Product::where('slug', $slug)->first()->photos as $photo){
                 // dd($photo);
                 $this->fileDelete(null, null, $photo);
             }
@@ -41,9 +48,15 @@ class ProductService extends BaseService
             foreach ($request['photos'] as $photo){
                 array_push($photos, $this->photoSave($photo, 'img/products'));
             }
+            $product->photos = $photos;
         }
-        $request['photos'] = $photos;
-        Product::find($id)->update($request);
+        
+        
+        $product->name_ru = $request['name_ru'];
+        $product->name_uz = $request['name_uz'];
+        $product->price = $request['price'];
+        $product->slug = Str::slug($request['name_ru']) . '-' . Str::random(5);;
+        $product->save();
         return redirect()->route('product.index');
     }
 

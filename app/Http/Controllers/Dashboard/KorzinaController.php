@@ -15,7 +15,7 @@ class KorzinaController extends Controller
      */
     public function index()
     {
-        $orders = Order::with(['location', 'brend', 'product'])->get();
+        $orders = Order::orderBy('id', 'desc')->with(['location', 'brend', 'product'])->get();
         return view('dashboard.orders.index', ['orders'=>$orders]);
     }
 

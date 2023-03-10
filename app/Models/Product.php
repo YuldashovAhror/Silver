@@ -13,6 +13,7 @@ class Product extends Model
         'name_uz',
         'name_ru',
         'price',
+        'slug',
     ];
 
     protected $casts = [

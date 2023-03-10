@@ -36,7 +36,7 @@ Route::get('/', [WelcomeController::class, 'index']);
 Route::get('/load/more', [WelcomeController::class, 'load_more']);
 Route::get('/load/button', [WelcomeController::class, 'button']);
 
-Route::get('/product-single/{id}', [WelcomeController::class, 'show'])->name('product.shows');
+Route::get('/product-single/{slug}', [WelcomeController::class, 'show'])->name('product.shows');
 Route::get('/feedback/store', [FeedbackController::class, 'store']);
 Route::get('/feedback/contact', [FeedbackController::class, 'store']);
 Route::resource('/orders', OrdersController::class);
