@@ -30,14 +30,14 @@ class ProductService extends BaseService
         $product->name_ru = $request['name_ru'];
         $product->name_uz = $request['name_uz'];
         $product->price = $request['price'];
-        if($request['brend_check'] != true){
+        // if($request['brend_check'] != true){
 
-            $product->brend_check = '0';
-        }
-        // if($request['brend_check'] != false){
-
-        //     $product->brend_check = 1;
+        //     $product->brend_check = '0';
         // }
+        if(isset($request['brend_check'])){
+
+            $product->brend_check = 1;
+        }
         $product->slug = Str::slug($request['name_ru']) . '-' . Str::random(5);
         $product->save();
         return back();
@@ -64,6 +64,11 @@ class ProductService extends BaseService
         $product->name_ru = $request['name_ru'];
         $product->name_uz = $request['name_uz'];
         $product->price = $request['price'];
+        if(isset($request['brend_check'])){
+            $product->brend_check = 1;
+        }else{
+            $product->brend_check = 0;
+        }
         $product->slug = Str::slug($request['name_ru']) . '-' . Str::random(5);;
         $product->save();
         return redirect()->route('product.index');

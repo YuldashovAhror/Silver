@@ -18,14 +18,14 @@
                                 <div class="col-12 text-center">
                                     <i data-feather="loader" style="height: 100px; width: 100px"></i>
                                 </div>
-                                <input class="form-control" id="exampleFormControlInput1" required="" type="file"
+                                <input class="form-control" id="exampleFormControlInput1" type="file"
                                     name="photos[]" multiple>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="mt-4" style="font-size: 30px">
                                 <label class="form-label" for="brend_check">Автомобиль Марки</label>
-                                <input class="form-check-input" name="brend_check" type="checkbox" id="brend_check" >
+                                <input class="form-check-input" name="brend_check" type="checkbox" id="brend_check" @if($product->brend_check == 1) checked @endif>
                             </div>
                         </div>
                     </div>
