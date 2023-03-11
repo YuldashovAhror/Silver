@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('name_uz');
             $table->string('name_ru');
             $table->string('price');
+            $table->boolean('brend_check')->default(0);
             $table->string('slug');
             $table->timestamps();
         });

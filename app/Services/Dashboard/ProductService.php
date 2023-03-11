@@ -3,6 +3,7 @@
 namespace App\Services\Dashboard;
 
 use App\Models\Product;
+use Faker\Guesser\Name;
 use Illuminate\Support\Str;
 
 class ProductService extends BaseService
@@ -15,6 +16,7 @@ class ProductService extends BaseService
 
     public function store($request)
     {
+        // dd($request);
         $request = $request->toArray();
         if (!empty($request['photos'])){
             $photos = [];
@@ -28,7 +30,14 @@ class ProductService extends BaseService
         $product->name_ru = $request['name_ru'];
         $product->name_uz = $request['name_uz'];
         $product->price = $request['price'];
-        // $product->slug = Str::slug($request->name_ru) . '-' . Str::random(5);
+        if($request['brend_check'] != true){
+
+            $product->brend_check = '0';
+        }
+        // if($request['brend_check'] != false){
+
+        //     $product->brend_check = 1;
+        // }
         $product->slug = Str::slug($request['name_ru']) . '-' . Str::random(5);
         $product->save();
         return back();

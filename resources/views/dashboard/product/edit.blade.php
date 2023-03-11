@@ -12,31 +12,37 @@
                 {{ method_field('put') }}
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-8">
                             <div class="mb-3">
                                 <label class="form-label" for="exampleFormControlInput1">Фотографии продукта</label>
                                 <div class="col-12 text-center">
-                                    @foreach ($product->photos as $photo)
-                                        <img src="{{ $photo }}" style="height: 100px; width: 100px">
-                                    @endforeach
+                                    <i data-feather="loader" style="height: 100px; width: 100px"></i>
                                 </div>
-                                <input class="form-control mt-4" type="file" name="photos[]" multiple>
+                                <input class="form-control" id="exampleFormControlInput1" required="" type="file"
+                                    name="photos[]" multiple>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="mt-4" style="font-size: 30px">
+                                <label class="form-label" for="brend_check">Автомобиль Марки</label>
+                                <input class="form-check-input" name="brend_check" type="checkbox" id="brend_check" >
                             </div>
                         </div>
                     </div>
                     <div class="row mt-2">
                         <div class="col-4">
                             <label class="form-label" for="name_uz">Название Uz</label>
-                            <input class="form-control" id="name_uz" type="text" name="name_uz" value="{{$product->name_uz}}">
+                            <input class="form-control" id="name_uz" required type="text" name="name_uz" value="{{$product->name_uz}}">
                         </div>
                         <div class="col-4">
                             <label class="form-label" for="name_ru">Название Ru</label>
-                            <input class="form-control" id="name_ru" type="text" name="name_ru" value="{{$product->name_ru}}">
+                            <input class="form-control" id="name_ru" required type="text" name="name_ru" value="{{$product->name_ru}}">
                         </div>
                         <div class="col-4">
                             <label class="form-label" for="price">Цена</label>
-                            <input class="form-control" id="price" type="text" name="price" value="{{$product->price}}">
+                            <input class="form-control" id="price" required type="text" name="price" value="{{$product->price}}">
                         </div>
+                        
                     </div>
                 </div>
                 <div class="card-footer text-end">

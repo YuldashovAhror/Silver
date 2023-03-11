@@ -42,7 +42,7 @@
                 <li>
                     <a href="{{route('brend.index')}}">
                         <i class="uil-star"></i>
-                        <span>Бренд</span>
+                        <span>Марки</span>
                     </a>
                 </li>
                 <li>
